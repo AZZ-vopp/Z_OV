@@ -114,8 +114,6 @@ pre_install_docker_compose() {
     read -p "Nhập Node ID port 443 :" node_443
     echo -e "Node_443 là : ${node_443}"
 
-    read -p "giới hạn thiết bị :" DeviceLimit
-    echo -e "DeviceLimit = ${DeviceLimit}"
 
     read -p "Nhập subdomain hoặc ip vps vpn cho port443:" CertDomain443
     echo -e "CertDomain port 443 là = ${CertDomain}"
@@ -178,7 +176,7 @@ Nodes:
       EnableVless: false # Enable Vless for V2ray Type
       EnableXTLS: false # Enable XTLS for V2ray and Trojan
       SpeedLimit: 0 # Mbps, Local settings will replace remote settings, 0 means disable
-      DeviceLimit: $DeviceLimit # Local settings will replace remote settings, 0 means disable
+      DeviceLimit: 0 # Local settings will replace remote settings, 0 means disable
       RuleListPath: # ./rulelist Path to local arulelist file
     ControllerConfig:
       ListenIP: 0.0.0.0 # IP address you want to listen
@@ -337,6 +335,9 @@ Install_xrayr() {
 # Initialization step
 clear
 while true; do
+  echo "phiên bản này được dùng image của xrayr-project đã chỉnh sửa 1 số thống số "
+  echo "fix zalo và chạy đa web lưu ý để tối đa 4 nút cho ổn định"
+  echo "zalo :0968343658"
   echo "Vui lòng nhập một số để Thực Hiện Câu Lệnh:"
   for ((i = 1; i <= ${#operation[@]}; i++)); do
     hint="${operation[$i - 1]}"
