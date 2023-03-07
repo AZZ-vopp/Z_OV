@@ -163,7 +163,7 @@ Log:
 DnsConfigPath: # ./dns.json Path to dns config
 ConnetionConfig:
   Handshake: 4 # Handshake time limit, Second
-  ConnIdle: 86400 # Connection idle time limit, Second
+  ConnIdle: 10 # Connection idle time limit, Second
   UplinkOnly: 2 # Time limit when the connection downstream is closed, Second
   DownlinkOnly: 4 # Time limit when the connection is closed after the uplink is closed, Second
   BufferSize: 64 # The internal cache size of each connection, kB
@@ -175,7 +175,7 @@ Nodes:
       ApiKey: "$APIKEY"
       NodeID: $node_80
       NodeType: V2ray # Node type: V2ray, Shadowsocks, Trojan
-      Timeout: 30 # Timeout for the api request
+      Timeout: 10 # Timeout for the api request
       EnableVless: false # Enable Vless for V2ray Type
       EnableXTLS: false # Enable XTLS for V2ray and Trojan
       SpeedLimit: $SpeedLimit # Mbps, Local settings will replace remote settings, 0 means disable
