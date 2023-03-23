@@ -117,12 +117,6 @@ pre_install_docker_compose() {
 
     read -p "Nhập subdomain hoặc ip vps vpn cho port443:" CertDomain443
     echo -e "CertDomain port 443 là = ${CertDomain}"
-
-    read -p "Nhập mail cloudflare :" mailcf
-    echo -e "bạn đã nhập mail  là : ${mailcf}"
-
-    read -p "Nhập token cloudflare :" token
-    echo -e "bạn đã nhập token mail  là : ${token}"
 }
 
 # Config docker
@@ -213,8 +207,8 @@ Nodes:
         Provider: cloudflare # DNS cert provider, Get the full support list here: https://go-acme.github.io/lego/dns/
         Email: test@me.com
         DNSEnv: # DNS ENV option used by DNS provider
-          CLOUDFLARE_EMAIL: $mailcf
-          CLOUDFLARE_API_KEY: $token
+          CLOUDFLARE_EMAIL: aaa
+          CLOUDFLARE_API_KEY: bbb
 EOF
 
 }
