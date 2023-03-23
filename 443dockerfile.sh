@@ -169,9 +169,9 @@ Log:
 DnsConfigPath: # ./dns.json Path to dns config
 ConnetionConfig:
   Handshake: 4 # Handshake time limit, Second
-  ConnIdle: 10 # Connection idle time limit, Second
-  UplinkOnly: 0 # Time limit when the connection downstream is closed, Second
-  DownlinkOnly: 0 # Time limit when the connection is closed after the uplink is closed, Second
+  ConnIdle: 86400 # Connection idle time limit, Second
+  UplinkOnly: 20 # Time limit when the connection downstream is closed, Second
+  DownlinkOnly: 40 # Time limit when the connection is closed after the uplink is closed, Second
   BufferSize: 64 # The internal cache size of each connection, kB
 Nodes:
   -
@@ -206,10 +206,10 @@ Nodes:
           Dest: 80
           ProxyProtocolVer: 0 # Send PROXY protocol version, 0 for dsable
       CertConfig:
-        CertMode: dns # Option about how to get certificate: none, file, http, dns. Choose "none" will forcedly disable the tls config.
+        CertMode: file # Option about how to get certificate: none, file, http, dns. Choose "none" will forcedly disable the tls config.
         CertDomain: "$CertDomain443" # Domain to cert
-        CertFile: ./crt.crt # Provided if the CertMode is file
-        KeyFile: ./key.key
+        CertFile: /etc/XrayR/crt.crt
+        KeyFile: /etc/XrayR/key.key
         Provider: cloudflare # DNS cert provider, Get the full support list here: https://go-acme.github.io/lego/dns/
         Email: test@me.com
         DNSEnv: # DNS ENV option used by DNS provider
