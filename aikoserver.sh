@@ -14,7 +14,7 @@ else
 fi
 
 if [ "$install_and_certificate" == "" ] || [ "${install_and_certificate^^}" == "Y" ]; then
-    read -p "ApiHost: " api_host
+    read -p "ApiHost(bỏ https:// nhé): " api_host
     read -p "ApiKey: " api_key
     read -p "NodeID for V2ray: " node_id_vmess
     read -p "NodeID for Trojan: " node_id_trojan
