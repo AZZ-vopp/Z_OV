@@ -28,9 +28,9 @@ sudo apt install docker-ce
 ```
 sudo systemctl status docker
 ```
-
+lệnh aiko server
 ```
-bash <(curl -Ls https://raw.githubusercontent.com/AZZ-vopp/Z_OV/main/script/Z_OVpanel.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/AZZ-vopp/Z_OV/main/script/aikoserver.sh)
 ```
 
 ```
